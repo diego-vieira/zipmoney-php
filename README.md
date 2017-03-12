@@ -39,7 +39,7 @@ $checkout = new \zipMoney\Api\Checkout();
 $checkout->request->charge = false;
 $checkout->request->currency_code = "AUD";
 $checkout->request->txn_id = false;
-$checkout->request->order_id =  $this->_current_order_id;
+$checkout->request->order_id = rand(1,9999);
 $checkout->request->in_store = false;
 
 $checkout->request->cart_url    = "https://your-domain/checkout/cart/";
@@ -120,7 +120,7 @@ $consumer->dob = "2016-06-16T15:31:23.8051383+10:00";
 $consumer->title = "mr";
 
 $checkout->request->consumer  = $consumer;
-$checkout->request->version = new Request\Version;
+$checkout->request->version = new \zipMoney\Request\Version;
 $checkout->request->version->platform = "php";
 
 try{
